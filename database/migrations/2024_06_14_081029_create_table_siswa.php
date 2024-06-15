@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tb_siswa', function (Blueprint $table) {
             $table->id();
-            $table->string('nis', 20)->comment('Nomor Induk Siswa');
+            $table->string('nis', 20)->comment('Nomor Induk Siswa')->unique();
             $table->string('nama');
             $table->string('tempat_lahir');
             $table->date('tgl_lahir');
