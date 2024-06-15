@@ -9,7 +9,10 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="nis" class="form-label">NIS <span style="color: red"> *</span></label>
-                            <input class="form-control" type="number" id="nis" name="nis" required placeholder="Masukan NIS">
+                            <input class="form-control @error('nis') is-invalid @enderror" type="number" id="nis" name="nis" required placeholder="Masukan NIS">
+                            @error('nis')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         </div>
                         <div class="col-md-6">
                             <label for="nama" class="form-label">Nama <span style="color: red"> *</span></label>
