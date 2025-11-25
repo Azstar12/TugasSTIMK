@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_siswa', function (Blueprint $table) {
+        Schema::create('tb_mahasiswa', function (Blueprint $table) {
             $table->id();
-            $table->string('nis', 20)->comment('Nomor Induk Siswa')->unique();
+            $table->string('nim', 20)->comment('Nomor Induk Mahasiswa')->unique();
             $table->string('nama');
             $table->string('tempat_lahir');
             $table->date('tgl_lahir');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->timestamps();
         });
-        
+
     }
 
     /**
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_siswa');
+        Schema::dropIfExists('tb_mahasiswa');
     }
 };
